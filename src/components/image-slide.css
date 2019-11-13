@@ -1,0 +1,60 @@
+.ant-carousel .slick-slide {
+  text-align: center;
+  max-height: 800px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide div {
+  height: 90vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.ant-carousel .slick-slide .slider-1 {
+  background-image: url(images/slider-1.jpg);
+}
+.ant-carousel .slick-slide .slider-2 {
+  background-image: url(images/slider-2.jpg);
+}
+.ant-carousel .slick-slide .slider-3 {
+  background-image: url(images/slider-3.jpg);
+}
+.ant-carousel .slick-slide .slider-4 {
+  background-image: url(images/slider-4.jpg);
+}
+.ant-carousel .slick-slide .slider-5 {
+  background-image: url(images/slider-5.jpg);
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.slider-mobile {
+  height: 455px;
+  background: url(./images/slider-1.jpg);
+  background-size: cover;
+  overflow: hidden;
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .slider-mobile {
+    display: block;
+  }
+
+  .ant-carousel .slick-slide div {
+    display: none;
+  }
+  .ant-carousel .slick-slide {
+    visibility: hidden;
+  }
+}

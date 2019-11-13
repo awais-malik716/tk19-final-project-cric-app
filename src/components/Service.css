@@ -1,0 +1,61 @@
+.icon-style img{
+    width: 90px;
+}
+
+.icon-style{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 0px 0px 10px black;
+    margin: 10px 0px;
+    border-radius: 50%;
+    transition: 500ms;
+}
+.icon-style:hover{
+    background: #f5f5f5;
+    transition: 500ms;
+    cursor: pointer;
+    box-shadow: 0px 0px 7px;
+}
+
+.caption-image img{
+    width: 280px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    margin-top: 20px;
+    transition: 500ms;
+}
+.caption-image img:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 500ms;
+}
+
+.service{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    width: 300px;
+}
+.service figcaption:hover{
+    color: darkslategray;
+    transition: 500ms;
+}
+
+.service a{
+    color: #1a1a1a;
+    text-decoration: underline;
+    transition: 500ms;
+    font-weight: bold
+}
+.service a:hover{
+    transition: 500ms;
+    color: darkslategray;
+    text-decoration: none;
+}

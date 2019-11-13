@@ -1,0 +1,33 @@
+user visitos
+
+good ui
+
+auto score refresh
+
+dynamic theme
+
+
+colors 
+//black shade  #1a1a1a
+//gold yellow  #b29b31
+
+//for slider use Slick slider
+
+Pages:
+
+///menu bar
+//home - slider, services
+//live matches - slider, matches list - going live and upcoming matches
+//cricket news = slider, news about crickets
+
+///others
+//live match scores
+
+Our services:
+//Live Matches
+//Cricket News
+//Your Favourite Cricket
+
+footer:
+//cotact us
+//download our App

@@ -1,0 +1,49 @@
+footer{
+    background-color: #1a1a1a;
+    color: white;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+footer>div{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer h3{
+    color: aliceblue;
+    font-size: 1.5em;
+}
+footer a{
+    color: blue;
+    transition: 500ms;
+}
+footer a:hover{
+    text-decoration: none;
+    transition: 500ms;
+}
+#app{
+    flex-direction: column;
+    padding: 30px;
+}
+#app>div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app img{
+    width: 100px;
+    height: 32px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px;
+    border-radius: 5px;
+    transition: 500ms;
+}
+#app img:hover{
+    box-shadow: 0px 0px 3px;
+    cursor: pointer;
+    transition: 500ms;
+}

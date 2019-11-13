@@ -1,0 +1,104 @@
+.match{
+    width: 600px;
+    padding: 10px 20px;
+    border: 1.1px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    transition: 500ms;
+}
+.match:hover{
+    background: #fafafa;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.teams-parent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.teams{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+}
+
+.teams-score, .teams-flag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.teams-flag p{
+    font-weight: 600;
+}
+
+.teams-score p{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.teams span{
+    font-size: 12px;
+}
+
+
+.match-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.match-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.match-info p{
+    font-size: 1.4em;
+    color: #767676;
+    font-weight: 400;
+}
+
+.match-description p{
+    font-weight: 600;
+}
+
+p{
+    margin: 0px;
+}
+
+
+
+@media(max-width: 620px){
+
+    .match{
+        width: 95%;
+    }
+
+}
+
+@media(max-width: 440px){
+    
+    .teams-parent{
+        flex-direction: column;
+    }
+
+    .teams{
+        margin: 10px 0px;
+    }
+
+    .team2{
+        flex-direction: row-reverse;
+    }
+}
+
