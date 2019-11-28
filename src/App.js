@@ -39,7 +39,8 @@ function App() {
   return (
     <div className="App">
 
-      {/* <HeaderBar
+      { 
+      <HeaderBar
         logo={logo}
         link1="#"
         menu1="HOME"
@@ -51,9 +52,9 @@ function App() {
         menu4="NEWS"
       />
 
-
-      <ImagesSlider />
-
+      // <SliderImage />
+      
+      /*
       <SiteInfo 
         heading="YOU CAN CATCH LIVE MATCHES, CRICKET NEWS AND YOUR FAVOURITE CRICKETERS HERE!"
         para="For more Cricket updates stay connected!"

@@ -1,12 +1,22 @@
+p{
+    transition: 800ms;
+}
+p:hover{
+    transition: 800ms;
+    text-shadow: 0px 0px 2px #bebdbd;
+}
 .match{
     width: 600px;
     padding: 10px 20px;
     border: 1.1px solid #dddddd;
+    border-top: 10px solid #1a1a1a;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background: white;
     transition: 500ms;
+    margin: 5px 2px;
+    box-shadow: 0px 0px 5px #767676;
 }
 .match:hover{
     background: #fafafa;
@@ -33,9 +43,9 @@
     align-items: center;
     flex-direction: column;
 }
-
 .teams-flag p{
     font-weight: 600;
+    text-align: center;
 }
 
 .teams-score p{

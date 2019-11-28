@@ -1,95 +1,108 @@
-import React from 'react';
 import './live-score.css';
+import React, { Component } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+
 import Match from './Match.jsx';
 
 import flag1 from './../images/flag-1.png';
 import flag2 from './../images/flag-2.png';
-
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
-const LiveScore = () => {
-
-    let matchesList;
-
-    const axios = require('axios');
-
-    // Make a request for a user with a given ID
-    axios.get('https://cricapi.com/api/cricket?apikey=qM4nJ31Wu9fmjHfNo0ki9OUVStI3')
-        .then(function (response) {
-            // handle success
-
-            // for (let i = 0; i < response.data.data.length; i++) {
-            //     console.log(response.data.data[i]);
-            // }
-
-            matchesList = response.data.data;
-            console.log(matchesList);
-
-            document.querySelector(".matches-list").innerHTML += matchesList.map(match =>
-                <Match
-
-                    isLive="Live"
-                    date="Today"
-
-                    team1Flag={flag1}
-                    team1="West Indies"
-                    scoreTeam1="249/7"
-                    team1Overs="(50)"
-
-                    team2Flag={flag2}
-                    team2="Afghanistan"
-                    scoreTeam2="253/5"
-                    team2Overs="(48.4)"
-
-                    description="WI win by 5 wickets (8 balls left)"
-                    status="ODI 3 of 3 (Wi wins 3-0)"
-
-                />);
+import { thisExpression } from '@babel/types';
 
 
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        .finally(function () {
-            // always executed
-        });
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 
-    return (
-        <div>
+class LiveScore extends Component {
+    constructor(props) {
+        super(props);
 
-            <div className="matches-list">
+        this.state = {
+            matches: [],
+        }
 
-                {
-                    // arr.map(match =>
-                    //     <Match
+    }
 
-                    //         isLive="Live"
-                    //         date="Today"
 
-                    //         team1Flag={flag1}
-                    //         team1="West Indies"
-                    //         scoreTeam1="249/7"
-                    //         team1Overs="(50)"
+    componentDidMount() {
+        axios.get(`https://cricapi.com/api/cricket?apikey=qM4nJ31Wu9fmjHfNo0ki9OUVStI3`)
+            .then(res => {
+                
+                // console.log(res.data)
 
-                    //         team2Flag={flag2}
-                    //         team2="Afghanistan"
-                    //         scoreTeam2="253/5"
-                    //         team2Overs="(48.4)"
+                let matchesList = [];
 
-                    //         description="WI win by 5 wickets (8 balls left)"
-                    //         status="ODI 3 of 3 (Wi wins 3-0)"
+                for (let i = 0; i < res.data.data.length; i++) {
 
-                    //     />
-                    // )
+                    let uniqueId = res.data.data[i].unique_id;
+
+                    axios.get("https://cricapi.com/api/cricketScore?apikey=qM4nJ31Wu9fmjHfNo0ki9OUVStI3&unique_id=" + uniqueId)
+                        // eslint-disable-next-line no-loop-func
+                        .then(response => {
+
+                            matchesList.push(response.data);
+
+                            console.log(response.data);
+
+                        })
+
                 }
 
-            </div>
+                this.setState({ matches: matchesList });
 
-        </div>
-    );
+                console.log(typeof this.state.matches)
+
+            })
+    }
+
+
+    render() {
+
+        
+
+        return (
+            <div>
+
+                <div className="matches-list">
+
+                    {
+                        this.state.matches.map(match =>
+                            <Match
+
+                                isLive={match.matchStarted === true ? "Live" : "Coming Soon"}
+                                date="Today"
+
+                                team1Flag={flag1}
+                                team1={match["team-1"]}
+                                scoreTeam1="249/7"
+                                team1Overs="(50)"
+
+                                team2Flag={flag2}
+                                team2={match["team-2"]}
+                                scoreTeam2={match.score}
+                                team2Overs="(48.4)"
+
+                                description={match.description}
+                                status="ODI 3 of 3 (Wi wins 3-0)"
+
+                            />
+                        )
+                    }
+
+                    {
+                        this.state.matches.map( check =>
+                            <div>{"Hello" + 1 + 1}</div>
+                        )
+                    }
+
+                </div>
+            </div>
+        );
+    }
+}
+
+LiveScore.propTypes = {
+
 };
 
 export default LiveScore;
